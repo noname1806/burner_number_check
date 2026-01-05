@@ -1,0 +1,86 @@
+[
+  {
+    "id": "20251228030740",
+    "phone_number": "+12258025676",
+    "timestamp": "2025-12-28T03:07:40.909894",
+    "csv_npa_nxx": "225-802",
+    "csv_provider": "VOICESTREAM GSM I, LLC",
+    "csv_classification": "LANDLINE/Regional",
+    "twilio_carrier": "T-Mobile USA, Inc.",
+    "twilio_line_type": "mobile",
+    "twilio_classification": "REAL MOBILE",
+    "is_burner": false
+  },
+  {
+    "id": "20251228030836",
+    "phone_number": "+12253085059",
+    "timestamp": "2025-12-28T03:08:36.507170",
+    "csv_npa_nxx": "225-308",
+    "csv_provider": "LEVEL 3 COMMUNICATIONS, LLC - LA",
+    "csv_classification": "BURNER/VoIP",
+    "twilio_carrier": "TextNow - Neutral Tandem - SVR",
+    "twilio_line_type": "nonFixedVoip",
+    "twilio_classification": "BURNER/VIRTUAL",
+    "is_burner": true
+  },
+  {
+    "id": "20251228030851",
+    "phone_number": "+12255032201",
+    "timestamp": "2025-12-28T03:08:51.739599",
+    "csv_npa_nxx": "225-503",
+    "csv_provider": "BANDWIDTH.COM CLEC, LLC - LA",
+    "csv_classification": "BURNER/VoIP",
+    "twilio_carrier": "TextNow - Neutral Tandem - SVR",
+    "twilio_line_type": "nonFixedVoip",
+    "twilio_classification": "BURNER/VIRTUAL",
+    "is_burner": true
+  },
+  {
+    "id": "20251228030914",
+    "phone_number": "+18043159148",
+    "timestamp": "2025-12-28T03:09:14.723172",
+    "csv_npa_nxx": "804-315",
+    "csv_provider": "ONVOY, LLC - VA",
+    "csv_classification": "BURNER/VoIP",
+    "twilio_carrier": "AffinityClick-Inteliquent",
+    "twilio_line_type": "nonFixedVoip",
+    "twilio_classification": "BURNER/VIRTUAL",
+    "is_burner": true
+  },
+  {
+    "id": "20251228030948",
+    "phone_number": "+15046083105",
+    "timestamp": "2025-12-28T03:09:48.774740",
+    "csv_npa_nxx": "504-608",
+    "csv_provider": "ONVOY, LLC - LA",
+    "csv_classification": "BURNER/VoIP",
+    "twilio_carrier": "Twilio - SMS/MMS-SVR",
+    "twilio_line_type": "nonFixedVoip",
+    "twilio_classification": "BURNER/VIRTUAL",
+    "is_burner": true
+  },
+  {
+    "id": "20251228031025",
+    "phone_number": "+18337061820",
+    "timestamp": "2025-12-28T03:10:25.088963",
+    "csv_npa_nxx": "N/A",
+    "csv_provider": "N/A",
+    "csv_classification": "N/A",
+    "twilio_carrier": "Zipwhip - Toll-Free - SVR",
+    "twilio_line_type": "tollFree",
+    "twilio_classification": "TOLLFREE",
+    "is_burner": false
+  },
+  {
+    "id": "20251229123835",
+    "phone_number": "+12102557830",
+    "timestamp": "2025-12-29T12:38:35.477009",
+    "csv_npa_nxx": "210-255",
+    "csv_provider": "SOUTHWESTERN BELL",
+    "csv_classification": "REAL/Mobile",
+    "twilio_carrier": "T-Mobile USA, Inc.",
+    "twilio_line_type": "mobile",
+    "twilio_classification": "REAL MOBILE",
+    "is_burner": false
+  }
+]
