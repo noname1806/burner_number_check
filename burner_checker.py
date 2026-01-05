@@ -164,9 +164,10 @@ HTML_TEMPLATE = '''
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
             padding: 20px;
         }
         
@@ -176,22 +177,32 @@ HTML_TEMPLATE = '''
         }
         
         .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 30px;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
         }
         
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
         
-        .search-card {
-            background: white;
-            border-radius: 15px;
+        .header p {
+            font-size: 14px;
+            color: #666666;
+        }
+        
+        .section {
+            border: 1px solid #000000;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
         
         .search-form {
@@ -202,150 +213,125 @@ HTML_TEMPLATE = '''
         
         .search-input {
             flex: 1;
-            padding: 15px;
-            font-size: 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            transition: border 0.3s;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #000000;
+            font-family: inherit;
         }
         
         .search-input:focus {
-            outline: none;
-            border-color: #667eea;
+            outline: 2px solid #000000;
+            outline-offset: -2px;
         }
         
         .search-btn {
-            padding: 15px 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            padding: 10px 30px;
+            background: #000000;
+            color: #ffffff;
             border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
+            font-size: 14px;
+            font-weight: 500;
             cursor: pointer;
-            transition: transform 0.2s;
+            font-family: inherit;
         }
         
         .search-btn:hover {
-            transform: translateY(-2px);
+            background: #333333;
         }
         
         .search-btn:disabled {
-            opacity: 0.6;
+            background: #cccccc;
             cursor: not-allowed;
         }
         
         .result-box {
             padding: 20px;
-            border-radius: 8px;
+            border: 1px solid #000000;
             margin-top: 20px;
             display: none;
         }
         
-        .result-box.success {
-            background: #d4edda;
-            border: 2px solid #28a745;
-            display: block;
-        }
-        
-        .result-box.error {
-            background: #f8d7da;
-            border: 2px solid #dc3545;
-            display: block;
-        }
-        
-        .result-box.burner {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
+        .result-box.show {
             display: block;
         }
         
         .result-title {
-            font-size: 1.3em;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
         
         .result-details {
+            font-size: 14px;
             line-height: 1.8;
         }
         
-        .database-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        
-        .database-header {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: #333;
+        .result-details strong {
+            display: inline-block;
+            width: 180px;
         }
         
         .records-table {
             width: 100%;
             border-collapse: collapse;
-            overflow-x: auto;
+            font-size: 14px;
         }
         
         .records-table th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: #000000;
+            color: #ffffff;
             padding: 12px;
             text-align: left;
             font-weight: 600;
+            border: 1px solid #000000;
         }
         
         .records-table td {
             padding: 12px;
-            border-bottom: 1px solid #e0e0e0;
+            border: 1px solid #000000;
         }
         
-        .records-table tr:hover {
+        .records-table tbody tr:nth-child(even) {
             background: #f5f5f5;
         }
         
         .badge {
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: bold;
-        }
-        
-        .badge-burner {
-            background: #ffc107;
-            color: #000;
-        }
-        
-        .badge-real {
-            background: #28a745;
-            color: white;
+            display: inline-block;
+            padding: 4px 10px;
+            border: 1px solid #000000;
+            font-size: 12px;
+            font-weight: 600;
         }
         
         .no-records {
             text-align: center;
             padding: 40px;
-            color: #999;
-            font-size: 1.2em;
+            color: #666666;
+            font-size: 14px;
         }
         
         .loading {
             text-align: center;
             padding: 20px;
-            color: #667eea;
+            color: #666666;
+        }
+        
+        .record-count {
+            font-size: 14px;
+            color: #666666;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📱 Phone Forensics Analyzer</h1>
+            <h1>Phone Forensics Analyzer</h1>
             <p>Analyze phone numbers to detect burners and virtual numbers</p>
         </div>
         
-        <div class="search-card">
-            <h2 style="margin-bottom: 20px;">Analyze Phone Number</h2>
+        <div class="section">
+            <h2 class="section-title">Analyze Phone Number</h2>
             <form class="search-form" id="searchForm">
                 <input 
                     type="text" 
@@ -362,8 +348,11 @@ HTML_TEMPLATE = '''
             <div id="resultBox" class="result-box"></div>
         </div>
         
-        <div class="database-card">
-            <h2 class="database-header">📊 Analysis Database (<span id="recordCount">0</span> records)</h2>
+        <div class="section">
+            <h2 class="section-title">
+                Analysis Database
+                <span class="record-count" id="recordCount">(0 records)</span>
+            </h2>
             <div id="tableContainer">
                 <div class="loading">Loading records...</div>
             </div>
@@ -378,10 +367,8 @@ HTML_TEMPLATE = '''
         const tableContainer = document.getElementById('tableContainer');
         const recordCount = document.getElementById('recordCount');
         
-        // Load database on page load
         loadDatabase();
         
-        // Handle form submission
         searchForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const phoneNumber = phoneInput.value.trim();
@@ -390,9 +377,8 @@ HTML_TEMPLATE = '''
             
             searchBtn.disabled = true;
             searchBtn.textContent = 'Analyzing...';
-            resultBox.innerHTML = '<div class="loading">🔍 Analyzing phone number...</div>';
-            resultBox.className = 'result-box';
-            resultBox.style.display = 'block';
+            resultBox.innerHTML = '<div class="loading">Analyzing phone number...</div>';
+            resultBox.className = 'result-box show';
             
             try {
                 const response = await fetch('/analyze', {
@@ -406,14 +392,12 @@ HTML_TEMPLATE = '''
                 const data = await response.json();
                 displayResult(data);
                 
-                // Reload database to show new record
                 if (data.success) {
                     loadDatabase();
                 }
             } catch (error) {
-                resultBox.className = 'result-box error';
                 resultBox.innerHTML = `
-                    <div class="result-title">❌ Error</div>
+                    <div class="result-title">Error</div>
                     <div class="result-details">Failed to analyze phone number. Please try again.</div>
                 `;
             } finally {
@@ -424,22 +408,19 @@ HTML_TEMPLATE = '''
         
         function displayResult(data) {
             if (!data.success) {
-                resultBox.className = 'result-box error';
+                resultBox.className = 'result-box show';
                 resultBox.innerHTML = `
-                    <div class="result-title">❌ Analysis Failed</div>
+                    <div class="result-title">Analysis Failed</div>
                     <div class="result-details">${data.message}</div>
                 `;
                 return;
             }
             
-            const isBurner = data.is_burner;
-            resultBox.className = isBurner ? 'result-box burner' : 'result-box success';
+            const statusText = data.is_burner ? 'BURNER/VIRTUAL NUMBER DETECTED' : 'REAL MOBILE NUMBER';
             
-            const statusIcon = isBurner ? '🚨' : '✅';
-            const statusText = isBurner ? 'BURNER/VIRTUAL NUMBER DETECTED' : 'REAL MOBILE NUMBER';
-            
+            resultBox.className = 'result-box show';
             resultBox.innerHTML = `
-                <div class="result-title">${statusIcon} ${statusText}</div>
+                <div class="result-title">${statusText}</div>
                 <div class="result-details">
                     <strong>Phone Number:</strong> ${data.formatted_number}<br>
                     <strong>NPA-NXX:</strong> ${data.csv_npa_nxx}<br>
@@ -457,10 +438,10 @@ HTML_TEMPLATE = '''
                 const response = await fetch('/database');
                 const data = await response.json();
                 
-                recordCount.textContent = data.records.length;
+                recordCount.textContent = `(${data.records.length} records)`;
                 
                 if (data.records.length === 0) {
-                    tableContainer.innerHTML = '<div class="no-records">No records found. Analyze a phone number to get started!</div>';
+                    tableContainer.innerHTML = '<div class="no-records">No records found. Analyze a phone number to get started.</div>';
                     return;
                 }
                 
@@ -471,7 +452,7 @@ HTML_TEMPLATE = '''
                                 <th>Phone Number</th>
                                 <th>Status</th>
                                 <th>CSV Provider</th>
-                                <th> Carrier</th>
+                                <th>Carrier</th>
                                 <th>Classification</th>
                                 <th>Analyzed</th>
                             </tr>
@@ -481,14 +462,14 @@ HTML_TEMPLATE = '''
                 
                 data.records.reverse().forEach(record => {
                     const badge = record.is_burner 
-                        ? '<span class="badge badge-burner">🚨 BURNER</span>'
-                        : '<span class="badge badge-real">✅ REAL</span>';
+                        ? '<span class="badge">BURNER</span>'
+                        : '<span class="badge">REAL</span>';
                     
                     const date = new Date(record.timestamp).toLocaleString();
                     
                     tableHTML += `
                         <tr>
-                            <td><strong>${record.phone_number}</strong></td>
+                            <td>${record.phone_number}</td>
                             <td>${badge}</td>
                             <td>${record.csv_provider}</td>
                             <td>${record.twilio_carrier}</td>
@@ -526,16 +507,12 @@ def analyze():
     if not phone_number:
         return jsonify({'success': False, 'message': 'Phone number is required'})
     
-    # Analyze with CSV
     csv_result = analyze_with_csv(phone_number)
-    
-    # Analyze with Twilio
     twilio_result = analyze_with_twilio(phone_number)
     
     if not twilio_result['success']:
         return jsonify(twilio_result)
     
-    # Create database record
     record = {
         'id': datetime.now().strftime('%Y%m%d%H%M%S'),
         'phone_number': twilio_result['formatted_number'],
@@ -549,12 +526,10 @@ def analyze():
         'is_burner': twilio_result['is_burner']
     }
     
-    # Save to database
     database = load_database()
     database.append(record)
     save_database(database)
     
-    # Return combined result
     return jsonify({
         'success': True,
         'formatted_number': twilio_result['formatted_number'],
